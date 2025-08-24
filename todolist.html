@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='colors.css') }}">
+</head>
+<body>
+    <!-- Κύριο container που κεντράρει τη λίστα -->
+    <div class="todolist-container">
+        <h1>Welcome to MyList</h1>
+        <p>Your personal todo list for everyday tasks!</p>
+        
+        <!-- Φόρμα για προσθήκη νέου todo -->
+        <form action="" method="POST">
+            <input type="text" name="todoname" placeholder="what do i have to do?">
+            <button>OK</button>
+        </form>    
+          <!-- Λίστα με όλα τα todos -->
+        <ul>
+        {% for todo in todos %}
+            <!-- Ελέγχει αν το todo είναι completed για το checkbox -->
+            {% set checked = 'checked' if todo.completed == true else '' %}
+            <li class="default">
+                <div class="todo-item">
+                    <!-- Κείμενο του todo με conditional done class -->
+                    <span class="todo-text {{'done' if todo.completed == true else ''}}">{{ todo.name }}</span>
+                    <div class="todo-actions">
+                        <!-- Checkbox για αλλαγή κατάστασης -->
+                        <input type="checkbox" data-id="{{ todo.id }}" {{ checked }}>
+                        <!-- Κουμπί διαγραφής με επιβεβαίωση -->
+                        <a href="/delete/{{ todo.id }}" class="delete-btn" onclick="return confirm('Are you sure you want to delete this item?')">delete</a>
+                    </div>
+                </div>
+            </li>
+         {% endfor %}      
+        </ul>
+    </div>
+    
+    <script src="{{ url_for('static', filename='func.js') }}"></script>
+</body>
+</html>

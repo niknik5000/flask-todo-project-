@@ -1,0 +1,132 @@
+/* Βασικές ρυθμίσεις σώματος σελίδας */
+body{
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    min-height: 100vh;
+}
+
+/* Στυλ για κάθε todo item στη λίστα */
+li.default{
+    background:#fff;
+    border:none;
+    border-bottom:1px solid #ddd;
+    text-align: left
+}
+
+/* Στυλ για completed todos (γραμμή απο πάνω) */
+.done {
+    text-decoration: line-through;
+}
+
+/* Αφαιρεί το border από το τελευταίο item */
+li.default:last-child{
+    border-bottom:none;
+}
+
+/* Κύριο container που κεντράρει τη λίστα todos */
+.todolist-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(245, 245, 245, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    padding: 30px;
+    backdrop-filter: blur(5px);
+}
+
+/* Στυλ για links */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Στυλ για τίτλους */
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Στυλ για παραγράφους */
+p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Στυλ για form inputs */
+input[type="text"] {
+    font-size: 16px;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
+    min-width: 300px;
+}
+
+/* Στυλ για buttons */
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Στυλ για checkboxes */
+input[type="checkbox"] {
+    transform: scale(1.3);
+    margin-right: 10px;
+}
+
+/* Flexbox layout για κάθε todo item */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* Κείμενο του todo - παίρνει τον διαθέσιμο χώρο */
+.todo-text {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Container για τα actions (checkbox, delete button) */
+.todo-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Στυλ για το κουμπί διαγραφής */
+.delete-btn {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+/* Hover effect για το delete button */
+.delete-btn:hover {
+    background-color: #ff3838;
+    color: white;
+}

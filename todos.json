@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "project for intro to ece",
+        "completed": true
+    },
+    {
+        "id": 2,
+        "name": "write essay for said project",
+        "completed": true
+    },
+    {
+        "id": 3,
+        "name": "deliver it",
+        "completed": false
+    }
+]
